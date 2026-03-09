@@ -7,7 +7,7 @@ function usersReducer(users = [], action = {}) {
   case ActionType.RECEIVE_USERS:
     return action.payload.users;
   default:
-    return users;
+    return;
   }
 }
 
