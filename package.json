@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint ./src",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
   },
   "dependencies": {
     "@dimasmds/react-redux-loading-bar": "^5.0.10",
@@ -46,6 +47,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "start-server-and-test": "^2.1.5",
     "tailwindcss": "^4.2.1",
     "vite": "^7.3.1",
     "vitest": "^4.0.18"
