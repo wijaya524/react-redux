@@ -1,33 +1,21 @@
 name: Continuous Integration
-
+ 
 on:
   pull_request:
     branches:
-      - main
-
+      - master
+ 
 jobs:
   automation-test-job:
     runs-on: ubuntu-latest
-
-    # Tambahkan strategy matrix agar ${{ matrix.node-version }} berfungsi
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-
+ 
     steps:
-      - uses: actions/checkout@v4 # Gunakan versi terbaru (v4)
-      
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm' # Menambah kecepatan build dengan cache
-
-      - name: Install dependencies
-        run: npm ci # Lebih baik dari 'npm install' untuk lingkungan CI
-
-      - name: Run Unit Tests
-        run: npm run test -- --watch=false # Memastikan vitest berhenti setelah jalan
-
-      # Jika kamu ingin menjalankan E2E, pastikan script e2e sudah benar
-      # Jika belum butuh E2E di tahap ini, cukup jalankan unit test saja
+      - name: npm install and test
+        run: |
+          npm install
+          npm run ci:test
