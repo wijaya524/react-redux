@@ -9,6 +9,7 @@
     "lint": "eslint ./src",
     "preview": "vite preview",
     "test": "vitest",
+    "e2e": "cypress run",
     "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
   },
   "dependencies": {
