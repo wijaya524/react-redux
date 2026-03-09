@@ -16,17 +16,6 @@ function receiveUsersActionCreator(users) {
   };
 }
 
-function asyncRegisterUser({ name, email, password }) {
-  return async () => {
-    try {
-      await api.register({ name, email, password });
-      return true;
-    } catch (error) {
-      alert(error.message);
-      return false;
-    }
-  };
-}
 
 export {
   ActionType,
