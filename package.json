@@ -11,6 +11,7 @@
     "test": "vitest",
     "ci:test": "vitest run && start-server-and-test dev http://127.0.0.1:5173 e2e"
   },
+  
   "dependencies": {
     "@dimasmds/react-redux-loading-bar": "^5.0.10",
     "@fontsource-variable/geist": "^5.2.8",
