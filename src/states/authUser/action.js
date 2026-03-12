@@ -37,7 +37,6 @@ function asyncSetAuthUser({ email, password }) {
   };
 }
 
-
 function asyncUnsetAuthUser() {
   return (dispatch) => {
     dispatch(unsetAuthUserActionCreator());
